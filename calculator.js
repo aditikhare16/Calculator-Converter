@@ -42,3 +42,45 @@ function calculate() {
         }
     });
 })();
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.querySelector('.calculator-display');
+    const buttons = document.querySelectorAll('.calculator-buttons button');
+    const operators = ['+', '-', '*', '/'];
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            handleInput(button.innerText);
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+
+        if (isNumber(key) || operators.includes(key) || key === '.' || key === 'Enter' || key === 'Backspace' || key === 'Escape') {
+            event.preventDefault();
+            handleInput(key);
+        }
+    });
+
+    function handleInput(input) {
+        let currentDisplay = display.value;
+
+        if (input === 'Enter' || input === '=') {
+            try {
+                display.value = eval(currentDisplay);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        } else if (input === 'Backspace') {
+            display.value = currentDisplay.slice(0, -1);
+        } else if (input === 'Escape' || input === 'C') {
+            display.value = '';
+        } else {
+            display.value += input;
+        }
+    }
+
+    function isNumber(value) {
+        return !isNaN(value) && value.trim() !== '';
+    }
+});
