@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Converters</h1>
+        <div class="tabs">
+            <button class="tab-button" onclick="openConverter('timezone')">Time Zone Converter</button>
+            <button class="tab-button" onclick="openConverter('currency')">Currency Converter</button>
+            <button class="tab-button" onclick="openConverter('temperature')">Temperature Converter</button>
+        </div>
+        <div id="timezone" class="converter">
+            <h2>Time Zone Converter</h2>
+            <input type="datetime-local" id="input-time" class="input-field" />
+            <select id="from-timezone" class="input-field">
+                <option value="UTC">UTC</option>
+                <option value="America/New_York">New York (EST)</option>
+                <option value="Europe/London">London (GMT)</option>
+                <option value="Asia/Kolkata">India (IST)</option>
+                <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                <!-- Add more options as needed -->
+            </select>
+            <select id="to-timezone" class="input-field">
+                <option value="UTC">UTC</option>
+                <option value="America/New_York">New York (EST)</option>
+                <option value="Europe/London">London (GMT)</option>
+                <option value="Asia/Kolkata">India (IST)</option>
+                <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                <!-- Add more options as needed -->
+            </select>
+            <button onclick="convertTime()" class="convert-button">Convert</button>
+            <p id="output-time" class="output-text"></p>
+        </div>
+        <div id="currency" class="converter" style="display:none;">
+            <h2>Currency Converter</h2>
+            <input type="number" id="input-amount" class="input-field" placeholder="Amount" />
+            <select id="from-currency" class="input-field">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <!-- Add more options as needed -->
+            </select>
+            <select id="to-currency" class="input-field">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <!-- Add more options as needed -->
+            </select>
+            <button onclick="convertCurrency()" class="convert-button">Convert</button>
+            <p id="output-amount" class="output-text"></p>
+        </div>
+        <div id="temperature" class="converter" style="display:none;">
+            <h2>Temperature Converter</h2>
+            <input type="number" id="input-temperature" class="input-field" placeholder="Temperature" />
+            <select id="from-temperature" class="input-field">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+            </select>
+            <select id="to-temperature" class="input-field">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+            </select>
+            <button onclick="convertTemperature()" class="convert-button">Convert</button>
+            <p id="output-temperature" class="output-text"></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.min.js"></script>
+    <script src="converters.js"></script>
+</body>
+</html>

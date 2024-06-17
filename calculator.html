@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Calculator</h1>
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="calculator-display" disabled>
+            </div>
+            <div class="buttons">
+                <button class="btn" onclick="pressNumber('1')">1</button>
+                <button class="btn" onclick="pressNumber('2')">2</button>
+                <button class="btn" onclick="pressNumber('3')">3</button>
+                <button class="btn" onclick="pressOperator('+')">+</button>
+                <button class="btn" onclick="pressNumber('4')">4</button>
+                <button class="btn" onclick="pressNumber('5')">5</button>
+                <button class="btn" onclick="pressNumber('6')">6</button>
+                <button class="btn" onclick="pressOperator('-')">-</button>
+                <button class="btn" onclick="pressNumber('7')">7</button>
+                <button class="btn" onclick="pressNumber('8')">8</button>
+                <button class="btn" onclick="pressNumber('9')">9</button>
+                <button class="btn" onclick="pressOperator('*')">*</button>
+                <button class="btn" onclick="pressNumber('0')">0</button>
+                <button class="btn" onclick="pressDecimal()">.</button>
+                <button class="btn" onclick="clearDisplay()">C</button>
+                <button class="btn" onclick="pressOperator('/')">/</button>
+                <button class="btn" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
